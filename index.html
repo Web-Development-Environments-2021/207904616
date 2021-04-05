@@ -1,23 +1,28 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet" type="text/css" href="style.css" />
-<link rel="shortcut icon" type="image/x-icon" href="img/guitar.png" />
-<style>
-  * {
-      margin: 0;
-      padding: 0;
-  }
-  .imgbox {
-      display: grid;
-      height: 100%;
-  }
-  .center-fit {
-      max-width: 100%;
-      max-height: 100vh;
-      margin: auto;
-  }
-</style>
+  <link rel="stylesheet" type="text/css" href="style.css" />
+  <link rel="shortcut icon" type="image/x-icon" href="img/guitar.png" />
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href="lib/css/emoji.css" rel="stylesheet">
+  <link rel="stylesheet" href="dist/emojionearea.min.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="dist/emojionearea.min.js"> </script>
+  <style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    .imgbox {
+        display: grid;
+        height: 100%;
+    }
+    .center-fit {
+        max-width: 100%;
+        max-height: 100vh;
+        margin: auto;
+    }
+  </style>
 </head>
 <title>לזכרו של מאיר בנאי</title>
 <meta charset="UTF-8">
@@ -184,11 +189,10 @@
   </picture>
   <br/>
   <br/>
-  <form action="mailto:omertag@post.bgu.ac.il" target="_blank" method="post">
-    <!-- <input class="w3-input w3-border" type="text" placeholder="Name" required name="Name">
-    <input class="w3-input w3-section w3-border" type="text" placeholder="Email" required name="Email"> -->
-    <input class="w3-input w3-section w3-border" type="text" enctype="text/plain" placeholder="Subject" required name="subject" style="width: 665px;">
-    <input class="w3-input w3-section w3-border" type="text" enctype="text/plain" placeholder="Comment" required name="body" style="width: 665px; height: 100px;">
+  <form action="mailto:omertag@post.bgu.ac.il" target="_blank" method="post" enctype="text/plain">
+  <!-- <form action="/blank" target="_blank" method="post" enctype="multipart/form-data"> -->
+    <!-- <input class="w3-input w3-section w3-border" type="text" placeholder="Subject" required name="subject" style="width: 665px;"> -->
+    <input id= "emoji-area" class="w3-input w3-section w3-border" type="text" placeholder="Comment" required name="body" style="width: 665px; height: 100px;">
     <button class="w3-button w3-dark-gray w3-section" type="submit">
       SEND MESSAGE <i class="fa fa-paper-plane"></i>  
     </button>
@@ -202,7 +206,14 @@
 </picture>
 </section>
 
-
+<!-- <script type="text/javascript">
+  $(document).ready(function() {
+    $("emoji").emojioneArea({
+      container: "#container",
+      hideSource: false,
+    });
+  });
+</script> -->
 
 <!-- <script type="text/javascript">
 $(function(){
@@ -232,6 +243,13 @@ function scrollFunction() {
 }
 </script>
 
+<script type="text/javascript">
+  $(document).ready(function() {
+    $("#emoji-area").emojioneArea({
+      searchPosition: "bottom"
+    });
+  });
+</script>
 <!-- <script>
   var myIndex = 0;
   carousel();
@@ -254,5 +272,11 @@ function scrollFunction() {
 <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v10.0" nonce="9iXPlrkw"></script>
 <div id="fb-root"></div>
 <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v10.0" nonce="C6qqL8c9"></script>
+
+
+<script src="lib/js/config.js"></script>
+<script src="lib/js/util.js"></script>
+<script src="lib/js/jquery.emojiarea.js"></script>
+<script src="lib/js/emoji-picker.js"></script>
 </body>
 </html>
